@@ -10,30 +10,14 @@ struct NODE
 
 void REVERSE_LIST(NODE *&top)
 {
-	NODE *ptr=NULL;
-	NODE *ptr1=NULL;
-	while(1)  // algo to reverse the list
-	{ 
-		if(top!=NULL)
-			ptr=top->link;
-		else
-		{	top=ptr1;
-			break;
-		}
-		top->link=ptr1;
-		if(ptr!=NULL)
-			ptr1=ptr->link;
-		else 
-			break;
-		ptr->link=top;
-		if(ptr1!=NULL)
-			top=ptr1->link;
-		else
-		{	top=ptr;
-			break;
-		}
-		ptr1->link=ptr;
-	}
+	NODE *curr = top, *prev = 0, *tmp;
+    while(curr!=0) {
+    	tmp = curr->link;
+    	curr->link = prev;
+    	prev = curr;
+    	curr = tmp;
+    }
+    top = prev;
 }
 
 int main()
@@ -61,6 +45,5 @@ int main()
 		cout<<ptr->data<<" ";
 		ptr=ptr->link;
 	}
-	system("pause");
 	return 0;
 }
