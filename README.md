@@ -1,2 +1,6 @@
-# Algorithms
-Repository to keep track of algorithms I have learned and implemented.
+# Data Structures and Algorithms
+
+<p>
+	<h2> Data Structures </h2>
+	<h2> Algorithms </h2>
+</p>
